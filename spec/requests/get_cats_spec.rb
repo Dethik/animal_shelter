@@ -1,9 +1,15 @@
 require 'rails_helper'
 
-describe "delete a cat route", :type => :request do
+describe "get all cats route", :type => :request do
+  let!(:cats) { FactoryBot.create_list(:cat, 20)}
 
-  before do
-    @cat = FactoryBot.create(:cat)
-    @cat2 = FactoryBot.create(:cat)
+  before { get '/cats'}
+
+  it 'returns all cats' do
+    expect(JSON.parse(response.body).size).to eq(20)
+  end
+
+  it 'returns status code 200' do
+    expect(response).to have_http_status(:success)
   end
 end
