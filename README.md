@@ -1,4 +1,4 @@
-# Travel Destination Reviews API
+# Animal Shelter API
 #### **Author: Zack Rutledge**
 * * *
 
@@ -30,29 +30,33 @@ This service requires no authentication to use.
 To Demo this API, follow the installation instructions listed below and navigate to http://localhost:3000/index.html in your browser. \
 There you can live demo the following API calls:
 
-**_Note: To search destination by country, state, or city, search params must be lowercase_**
+**_Note: To search cat by name, gender, or breed, search params must be lowercase_**
 
  Action |  Route | Description
 | :--- | --- | ---: |
-| <span style="color:blue">Get</span> | /random | _Fetches a random destination_ |
-| <span style="color:blue">Get</span> | /destinations | _Fetches all destinations_ |
-| <span style="color:blue">Get</span> | /destinations?country={country} | _Fetches destinations that match a country_ |
-| <span style="color:blue">Get</span> | /destinations?state={state} | _Fetches destinations that match a state_ |
-| <span style="color:blue">Get</span> | /destinations?city={city} | _Fetches destinations that match a city_ |
-| <span style="color:green">Post</span> | /destinations | _Creates a destination_ |
-| <span style="color:red">Delete</span> | /destinations/{destination_id} | _Deletes a destination_ |
-| <span style="color:blue">Get</span> | /destinations/{destination_id} | _Fetches a single destination_ |
-| <span style="color:gold">Patch</span> | /destinations/{destination_id} | _Updates a single destination_ |
-| <span style="color:blue">Get</span> | /destinations/{destination_id}/reviews | _Fetches all reviews for a destination_ |
-| <span style="color:green">Post</span> | /destinations/{destination_id}/reviews | _Creates a review for a destination_     |
-| <span style="color:red">Delete</span> | /destinations/{destination_id}/reviews/{review_id} | _Deletes a review for a destination_ |
-| <span style="color:blue">Get</span> | /destinations/{destination_id}/reviews/{review_id} | _Fetches a single review for a destination_ |
-| <span style="color:gold">Patch</span> | /destinations/{destination_id}/reviews/{review_id} | _Updates a single review for a destination_ |
+| <span style="color:blue">Get</span> | /cats | _Fetches all cats_ |
+| <span style="color:blue">Get</span> | /cats?name={name} | _Fetches cats that match a name_ |
+| <span style="color:blue">Get</span> | /cats?gender={gender} | _Fetches cats that match a gender_ |
+| <span style="color:blue">Get</span> | /cats?breed={breed} | _Fetches cats that match a breed_ |
+| <span style="color:blue">Get</span> | /cats?size={size} | _Fetches cats that match a size_ |
+| <span style="color:green">Post</span> | /cats | _Creates a cat_ |
+| <span style="color:red">Delete</span> | /cats/{cat_id} | _Deletes a cat_ |
+| <span style="color:blue">Get</span> | /cats/{cat_id} | _Fetches a single cat_ |
+| <span style="color:gold">Patch</span> | /cats/{cat_id} | _Updates a single cat_ |
+| <span style="color:blue">Get</span> | /dogs | _Fetches all dogs_ |
+| <span style="color:blue">Get</span> | /dogs?name={name} | _Fetches dogs that match a name_ |
+| <span style="color:blue">Get</span> | /dogs?gender={gender} | _Fetches dogs that match a gender_ |
+| <span style="color:blue">Get</span> | /dogs?breed={breed} | _Fetches dogs that match a breed_ |
+| <span style="color:blue">Get</span> | /dogs?size={size} | _Fetches dogs that match a size_ |
+| <span style="color:green">Post</span> | /dogs | _Creates a dog_ |
+| <span style="color:red">Delete</span> | /dogs/{dog_id} | _Deletes a dog_ |
+| <span style="color:blue">Get</span> | /dogs/{dog_id} | _Fetches a single dog_ |
+| <span style="color:gold">Patch</span> | /dogs/{dog_id} | _Updates a single dog_ |
 
 ## Responses & Errors
 
 * 404 - Not Found \
-  **{ "message": "Couldn't find Destination with 'id'=  " }**
+  **{ "message": "Couldn't find cat with 'id'=  " }**
 * 422 - Unprocessable Entity \
   **{ "message": "Validation failed" }**
 * 500 - Internal Server Error \
@@ -61,7 +65,7 @@ There you can live demo the following API calls:
 * * *
 ## Schema
 
-<img src="./public/images/api-schema.png" alt="Image of schema.">
+<img src="./public/images/api-schema.jpg" alt="Image of schema.">
 * * *
 ## Software Requirements
 * **Ruby is required to run this application**
