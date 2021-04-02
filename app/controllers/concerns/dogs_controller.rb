@@ -2,14 +2,22 @@ class DogsController < ApplicationController
   swagger_controller :dogs, "Available Dogs"
 
   swagger_api :index do
-    summary "Fetches all Dogs"
-    notes "This lists all the available Dogs"
+    summary "Fetches all dogs"
+    notes "This lists all the available dogs"
+    param :query, :name, :string, :optional, "name"
+    param :query, :gender, :string, :optional, "gender"
+    param :query, :breed, :string, :optional, "breed"
+    param :query, :size, :string, :optional, "size"
     response :ok, "Success"
     response :unauthorized
     response :not_acceptable, "The request you made is not acceptable"
   end
   def index
-    @dogs = Dog.all
+    @dogs = Cat.all
+    @dogs = @dogs.by_name(params[:name]) if params[:name].present?
+    @dogs = @dogs.by_gender(params[:gender]) if params[:gender].present?
+    @dogs = @dogs.by_breed(params[:breed]) if params[:breed].present?
+    @dogs = @dogs.by_size(params[:size]) if params[:size].present?
     json_response(@dogs)
   end
 
@@ -73,6 +81,19 @@ class DogsController < ApplicationController
         message: "This dog has been deleted successfully."
       }
     end
+  end
+
+  swagger_api :random do
+    summary "Fetches a random dog"
+    notes "Fetches a single random dog from the database."
+    response :ok, "Success"
+    response :not_found
+    response :unprocessable_entity
+  end
+  def random
+    ids = Dog.pluck(:id)
+    @random_dog = Dog.find(ids.sample)
+    json_response(@random_dog)
   end
 
   private

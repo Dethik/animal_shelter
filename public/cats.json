@@ -10,6 +10,36 @@
         {
           "summary": "Fetches all cats",
           "notes": "This lists all the available cats",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "name",
+              "type": "string",
+              "description": "name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "gender",
+              "type": "string",
+              "description": "gender",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "breed",
+              "type": "string",
+              "description": "breed",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "size",
+              "type": "string",
+              "description": "size",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
               "code": 200,
@@ -37,18 +67,6 @@
       "operations": [
         {
           "summary": "Creates a new Cat",
-          "responseMessages": [
-            {
-              "code": 401,
-              "responseModel": null,
-              "message": "Unauthorized"
-            },
-            {
-              "code": 406,
-              "responseModel": null,
-              "message": "Not Acceptable"
-            }
-          ],
           "parameters": [
             {
               "paramType": "form",
@@ -79,6 +97,18 @@
               "required": true
             }
           ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
           "nickname": "Cats#create",
           "method": "post"
         }
@@ -89,6 +119,15 @@
       "operations": [
         {
           "summary": "Fetches a single Cat",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Cat Id",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
               "code": 200,
@@ -111,15 +150,6 @@
               "message": "Not Acceptable"
             }
           ],
-          "parameters": [
-            {
-              "paramType": "path",
-              "name": "id",
-              "type": "integer",
-              "description": "Cat Id",
-              "required": false
-            }
-          ],
           "nickname": "Cats#show",
           "method": "get"
         }
@@ -130,23 +160,6 @@
       "operations": [
         {
           "summary": "Updates an existing Cat",
-          "responseMessages": [
-            {
-              "code": 401,
-              "responseModel": null,
-              "message": "Unauthorized"
-            },
-            {
-              "code": 404,
-              "responseModel": null,
-              "message": "Not Found"
-            },
-            {
-              "code": 406,
-              "responseModel": null,
-              "message": "Not Acceptable"
-            }
-          ],
           "parameters": [
             {
               "paramType": "path",
@@ -184,6 +197,23 @@
               "required": true
             }
           ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
           "nickname": "Cats#update",
           "method": "patch"
         }
@@ -194,6 +224,15 @@
       "operations": [
         {
           "summary": "Deletes an existing Cat",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
               "code": 401,
@@ -206,17 +245,36 @@
               "message": "Not Found"
             }
           ],
-          "parameters": [
-            {
-              "paramType": "path",
-              "name": "id",
-              "type": "integer",
-              "description": "User Id",
-              "required": false
-            }
-          ],
           "nickname": "Cats#destroy",
           "method": "delete"
+        }
+      ]
+    },
+    {
+      "path": "/random_cat",
+      "operations": [
+        {
+          "summary": "Fetches a random cat",
+          "notes": "Fetches a single random cat from the database.",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Cats#random",
+          "method": "get"
         }
       ]
     }

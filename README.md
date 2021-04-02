@@ -30,28 +30,22 @@ This service requires no authentication to use.
 To Demo this API, follow the installation instructions listed below and navigate to http://localhost:3000/index.html in your browser. \
 There you can live demo the following API calls:
 
-**_Note: To search cat by name, gender, or breed, search params must be lowercase_**
+**_Note: To search cat by name, gender, breed, or size, search params must be lowercase_**
 
+**Table of Search Options**
  Action |  Route | Description
 | :--- | --- | ---: |
-| <span style="color:blue">Get</span> | /cats | _Fetches all cats_ |
-| <span style="color:blue">Get</span> | /cats?name={name} | _Fetches cats that match a name_ |
-| <span style="color:blue">Get</span> | /cats?gender={gender} | _Fetches cats that match a gender_ |
-| <span style="color:blue">Get</span> | /cats?breed={breed} | _Fetches cats that match a breed_ |
-| <span style="color:blue">Get</span> | /cats?size={size} | _Fetches cats that match a size_ |
-| <span style="color:green">Post</span> | /cats | _Creates a cat_ |
-| <span style="color:red">Delete</span> | /cats/{cat_id} | _Deletes a cat_ |
-| <span style="color:blue">Get</span> | /cats/{cat_id} | _Fetches a single cat_ |
-| <span style="color:gold">Patch</span> | /cats/{cat_id} | _Updates a single cat_ |
-| <span style="color:blue">Get</span> | /dogs | _Fetches all dogs_ |
-| <span style="color:blue">Get</span> | /dogs?name={name} | _Fetches dogs that match a name_ |
-| <span style="color:blue">Get</span> | /dogs?gender={gender} | _Fetches dogs that match a gender_ |
-| <span style="color:blue">Get</span> | /dogs?breed={breed} | _Fetches dogs that match a breed_ |
-| <span style="color:blue">Get</span> | /dogs?size={size} | _Fetches dogs that match a size_ |
-| <span style="color:green">Post</span> | /dogs | _Creates a dog_ |
-| <span style="color:red">Delete</span> | /dogs/{dog_id} | _Deletes a dog_ |
-| <span style="color:blue">Get</span> | /dogs/{dog_id} | _Fetches a single dog_ |
-| <span style="color:gold">Patch</span> | /dogs/{dog_id} | _Updates a single dog_ |
+| <span style="color:dodgerblue">Get</span> | /cats?name={name} | _Fetches cats that match a name_ |
+| <span style="color:dodgerblue">Get</span> | /cats?gender={gender} | _Fetches cats that match a gender_ |
+| <span style="color:dodgerblue">Get</span> | /cats?breed={breed} | _Fetches cats that match a breed_ |
+| <span style="color:dodgerblue">Get</span> | /cats?size={size} | _Fetches cats that match a size_ |
+| <span style="color:dodgerblue">Get</span> | /dogs?name={name} | _Fetches dogs that match a name_ |
+| <span style="color:dodgerblue">Get</span> | /dogs?gender={gender} | _Fetches dogs that match a gender_ |
+| <span style="color:dodgerblue">Get</span> | /dogs?breed={breed} | _Fetches dogs that match a breed_ |
+| <span style="color:dodgerblue">Get</span> | /dogs?size={size} | _Fetches dogs that match a size_ |
+
+**Preview List of available Routes**<br>
+<img src="./public/images/API_routes.jpg" alt="Image of routes.">
 
 ## Responses & Errors
 
