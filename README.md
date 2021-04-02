@@ -65,8 +65,8 @@ There you can live demo the following API calls:
 * **Ruby is required to run this application**
 * **PostgreSQL is required to run the database**
 
- <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-ruby">Ruby download instructions</a>
-  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-postgres">PosgreSQL download instructions</a>
+  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-ruby">Ruby download instructions</a>
+  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-postgres">PostgreSQL download instructions</a>
 
 ## Installation Instructions
 1. Navigate to the desired directory where you would like to clone the project to.
@@ -94,24 +94,28 @@ $ gem install bundler
 $ bundle install
 ```
 
-6. Create a database for this project by typing the following into your terminal while located in the root directory:
+6. **IF A WINDOWS USER** - Add your PSQL Username and Password to the database.yml file located within the config folder!
+<br>
+<img src="./public/images/config_db.jpg" alt="Image of folder and file location.">
+
+7. Create a database for this project by typing the following into your terminal while located in the root directory:
 ```
 $ rake db:setup
 ```
 
-7. Seed the database with supplementary data:
+8. Seed the database with supplementary data:
 ```
 $ rake db:seed
 ```
 
-8. Prepare API documentation to view in browser:
+9. Prepare API documentation to view in browser:
 ```
 $ rake swagger:docs
 ```
 
 The database should now be correctly set up. And you may start a local server to interact with the project.
 
-9. To start a local server, open your default browser and type "localhost:3000" into the search bar and press enter. Here, you will see the live server.
+10. To start a local server, open your default browser and type "localhost:3000" into the search bar and press enter. Here, you will see the live server.
 
 ## Running Tests
 * This application was created using test-driven development (TDD).
