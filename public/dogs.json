@@ -1,0 +1,225 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "dogs",
+  "apis": [
+    {
+      "path": "/dogs",
+      "operations": [
+        {
+          "summary": "Fetches all Dogs",
+          "notes": "This lists all the available Dogs",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            }
+          ],
+          "nickname": "Dogs#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/dogs",
+      "operations": [
+        {
+          "summary": "Creates a new Dog",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "gender",
+              "type": "string",
+              "description": "Gender",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "breed",
+              "type": "string",
+              "description": "Breed",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "size",
+              "type": "string",
+              "description": "Size",
+              "required": true
+            }
+          ],
+          "nickname": "Dogs#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/dogs/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Dog",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "Dog",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Dog Id",
+              "required": false
+            }
+          ],
+          "nickname": "Dogs#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/dogs/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing Dog",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Dog Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "gender",
+              "type": "string",
+              "description": "Gender",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "breed",
+              "type": "string",
+              "description": "Breed",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "size",
+              "type": "string",
+              "description": "Size",
+              "required": true
+            }
+          ],
+          "nickname": "Dogs#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/dogs/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing Dog",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": false
+            }
+          ],
+          "nickname": "Dogs#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

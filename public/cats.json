@@ -1,0 +1,225 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "cats",
+  "apis": [
+    {
+      "path": "/cats",
+      "operations": [
+        {
+          "summary": "Fetches all cats",
+          "notes": "This lists all the available cats",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            }
+          ],
+          "nickname": "Cats#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/cats",
+      "operations": [
+        {
+          "summary": "Creates a new Cat",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "gender",
+              "type": "string",
+              "description": "Gender",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "breed",
+              "type": "string",
+              "description": "Breed",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "size",
+              "type": "string",
+              "description": "Size",
+              "required": true
+            }
+          ],
+          "nickname": "Cats#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/cats/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Cat",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "Cat",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Cat Id",
+              "required": false
+            }
+          ],
+          "nickname": "Cats#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/cats/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing Cat",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Cat Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "gender",
+              "type": "string",
+              "description": "Gender",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "breed",
+              "type": "string",
+              "description": "Breed",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "size",
+              "type": "string",
+              "description": "Size",
+              "required": true
+            }
+          ],
+          "nickname": "Cats#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/cats/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing Cat",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": false
+            }
+          ],
+          "nickname": "Cats#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

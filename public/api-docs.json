@@ -1,9 +1,24 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "",
+  "basePath": "http://localhost:3000",
   "apis": [
-
+    {
+      "path": "/dogs.{format}",
+      "description": "Available Dogs"
+    },
+    {
+      "path": "/cats.{format}",
+      "description": "Available Cats"
+    }
   ],
-  "authorizations": null
+  "authorizations": null,
+  "info": {
+    "title": "Animal Shelter API",
+    "description": "Get and post reviews for travel destinations.",
+    "termsOfServiceUrl": "http://helloreverb.com/terms/",
+    "contact": "apiteam@wordnik.com",
+    "license": "Apache 2.0",
+    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  }
 }
